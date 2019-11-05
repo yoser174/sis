@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/vendors/mdi/css/materialdesignicons.min.css";
+@import "./assets/vendors/base/vendor.bundle.base.css";
+@import "./assets/css/style.css";
+@import "./assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css";
+@import '~material-design-icons/iconfont/material-icons.css';
+@import 'typeface-roboto/index.css';
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+*/
+
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 2000;
+}

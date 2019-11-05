@@ -1,0 +1,41 @@
+{
+    "LOGIN": {
+        "API_ERROR": "Connection error with the server, please check your internet connection then reload this page.",
+        "IDCARD": "ID Card",
+        "IDCARD_PLACEHOLDER": "Please scan your Siloam ID Card",
+        "SIGNIN": "Sign in",
+        "USERNAME": "User Name",
+        "LANGUAGE": "Language",
+        "PASSWORD": "Password",
+        "BACK": "Back",
+        "IDCARD_FOOTER_TITTLE": "Login with username and password ?",
+        "IDCARD_FOOTER_BTN": "Login here",
+        "IDCARD_INVALID": "Invalid ID Card."
+    },
+    "HEADER": {
+        "TEST_ENVIRONMENT": "TEST ENVIRONMENT",
+        "LOGOUT": "Logout"
+    },
+    "SIDEBAR": {
+        "DASHBOARD": "Dashboard",
+        "GOODSMANAGEMENT": "Goods Management",
+        "GOODSIN": "Goods In",
+        "GOODSOUT": "Goods Out",
+        "GOODSMASTERDATA": "Goods Master Data",
+        "ADMINISTRATIONS": "Administrations",
+        "USERMANAGEMENT": "User Management",
+        "STORAGEMANAGEMENT": "Storage Management",
+        "CHANGEPASSWORD": "Change Password",
+        "REPORTS": "Reports",
+        "GOODSRECEIVED": "Goods Received",
+        "GOODSCONSUMPTION": "Goods Consumption",
+        "GOODSEXPIRY": "Goods Expiry",
+        "EXPIREDGOODS": "Expired Goods",
+        "FULFILLMENTSUMMARY": "Fulfillment Summary",
+        "SUBMISSION": "Submission",
+        "PREORDERGOODS": "Pre Order Goods",
+        "ADDPREORDERGOODS": "Add Pre Order Goods",
+        "CPRRDATAUSAGE": "CPRR Data Usage",
+        "ITEMLISTS": "Item Lists"
+    }
+}

@@ -1,0 +1,60 @@
+<div class="container">
+    <h3 mat-dialog-title>No catalog: {{data.no_catalog}}</h3>
+
+    <form class="mat-dialog-content" #formControl="ngForm">
+
+        <div class="form">
+            <mat-form-field color="accent">
+                <input matInput #input class="form-control" placeholder="Description" [(ngModel)]="data.description" name="description" required>
+                <mat-error *ngIf="formControl.invalid"></mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field color="accent">
+                <input matInput #input class="form-control" placeholder="Pack size" [(ngModel)]="data.uom" name="uom" required>
+                <mat-error *ngIf="formControl.invalid"></mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field color="accent">
+                <mat-select placeholder="Instrument" [(value)]="data.id_instrument">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let inst of data.instrument_list" [value]="inst.id_instrument">{{ inst.instrument }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field color="accent">
+                <mat-select placeholder="Storage" [(value)]="data.id_storage">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let st of data.storage_list" [value]="st.id_storage">{{ st.storages }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+
+        <div class="form">
+            <mat-form-field color="accent">
+                <input matInput #input class="form-control" placeholder="Min stock" [(ngModel)]="data.min_stock" name="min_stock" required>
+                <mat-error *ngIf="formControl.invalid"></mat-error>
+            </mat-form-field>
+        </div>
+
+        <div class="form">
+            <mat-form-field color="accent">
+                <input matInput #input class="form-control" placeholder="Max stock" [(ngModel)]="data.max_stock" name="max_stock" required>
+                <mat-error *ngIf="formControl.invalid"></mat-error>
+            </mat-form-field>
+        </div>
+
+        <div mat-dialog-actions>
+            <button mat-button type="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Update</button>
+            <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+        </div>
+
+
+    </form>
+</div>

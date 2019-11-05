@@ -1,0 +1,72 @@
+<ul class="nav">
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/dashboard">
+            <i class="mdi mdi-home menu-icon"></i>
+            <span class="menu-title">{{ 'SIDEBAR.DASHBOARD' | translate }}</span>
+        </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" data-toggle="collapse" href="#goods-management" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-folder-open menu-icon"></i>
+            <span class="menu-title">{{ 'SIDEBAR.GOODSMANAGEMENT' | translate }}</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" routerLinkActive="show" id="goods-management">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" routerLink="/goods-in" routerLinkActive="active">{{ 'SIDEBAR.GOODSIN' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/goods-out" routerLinkActive="active">{{ 'SIDEBAR.GOODSOUT' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/goods-master-data" routerLinkActive="active">{{ 'SIDEBAR.GOODSMASTERDATA' | translate }}</a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" data-toggle="collapse" href="#administrations" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-settings menu-icon"></i>
+            <span class="menu-title">{{ 'SIDEBAR.ADMINISTRATIONS' | translate }}</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" routerLinkActive="show" id="administrations">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" routerLink="/user-management" routerLinkActive="active">{{ 'SIDEBAR.USERMANAGEMENT' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/storage-management" routerLinkActive="active">{{ 'SIDEBAR.STORAGEMANAGEMENT' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/change-password" routerLinkActive="active">{{ 'SIDEBAR.CHANGEPASSWORD' | translate }}</a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" data-toggle="collapse" href="#reports" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-file menu-icon"></i>
+            <span class="menu-title">{{ 'SIDEBAR.REPORTS' | translate }}</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" routerLinkActive="show" id="reports">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" routerLink="/report-goods-received" routerLinkActive="active">{{ 'SIDEBAR.GOODSRECEIVED' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/report-goods-consumption" routerLinkActive="active">{{ 'SIDEBAR.GOODSCONSUMPTION' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/report-goods-expiry" routerLinkActive="active">{{ 'SIDEBAR.GOODSEXPIRY' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/report-expired-goods" routerLinkActive="active">{{ 'SIDEBAR.EXPIREDGOODS' | translate }}</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/fulfillment-summary" routerLinkActive="active">{{ 'SIDEBAR.FULFILLMENTSUMMARY' | translate }}</a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" data-toggle="collapse" href="#submission" aria-expanded="false" aria-controls="ui-basic">
+            <i class="mdi mdi-inbox menu-icon"></i>
+            <span class="menu-title">Submission</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" routerLinkActive="show" id="submission">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" routerLink="/pre-order-goods" routerLinkActive="active">Pre Order Goods</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/add-pre-order-goods" routerLinkActive="active">Add Pre Order Goods</a></li>
+                <li class="nav-item"> <a class="nav-link" routerLink="/cprr-data-usage" routerLinkActive="active">CPRR Data Usage</a></li>
+            </ul>
+        </div>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/item-lists">
+            <i class="mdi mdi-format-list-bulleted-type menu-icon"></i>
+            <span class="menu-title">Item Lists</span>
+        </a>
+    </li>
+</ul>

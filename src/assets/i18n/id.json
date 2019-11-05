@@ -1,0 +1,42 @@
+{
+    "LOGIN": {
+        "API_ERROR": "Connection error with the server, please check your internet connection then reload this page.",
+        "IDCARD": "Kartu ID",
+        "IDCARD_PLACEHOLDER": "Silakan pindai Kartu ID Siloam Anda",
+        "SIGNIN": "Masuk",
+        "LANGUAGE": "Bahasa",
+        "USERNAME": "Nama Pengguna",
+        "USERNAME_PLAC": "Nama Pengguna",
+        "PASSWORD": "Kata sandi",
+        "BACK": "Kembali",
+        "IDCARD_FOOTER_TITTLE": "Login dengan nama pengguna dan kata sandi?",
+        "IDCARD_FOOTER_BTN": "Masuk disini",
+        "IDCARD_INVALID": "Kartu ID tidak valid."
+    },
+    "HEADER": {
+        "TEST_ENVIRONMENT": "LINGKUNGAN UJI",
+        "LOGOUT": "Keluar"
+    },
+    "SIDEBAR": {
+        "DASHBOARD": "Dasbor",
+        "GOODSMANAGEMENT": "Manajemen Barang",
+        "GOODSIN": "Barang Masuk",
+        "GOODSOUT": "Barang Keluar",
+        "GOODSMASTERDATA": "Master Data Barang",
+        "ADMINISTRATIONS": "Administrasi",
+        "USERMANAGEMENT": "Manajemen Pengguna",
+        "STORAGEMANAGEMENT": "Manajemen Penyimpanan",
+        "CHANGEPASSWORD": "Ganti Kata Sandi",
+        "REPORTS": "Laporan",
+        "GOODSRECEIVED": "Barang Diterima",
+        "GOODSCONSUMPTION": "Konsumsi Barang",
+        "GOODSEXPIRY": "Barang Belum Kadaluarsa",
+        "EXPIREDGOODS": "Barang Kadaluarsa",
+        "FULFILLMENTSUMMARY": "Ringkasan Pemenuhan",
+        "SUBMISSION": "Pengajuan",
+        "PREORDERGOODS": "Pra Order Barang",
+        "ADDPREORDERGOODS": "Tambah Pra Order Barang",
+        "CPRRDATAUSAGE": "Penggunaan Data CPRR",
+        "ITEMLISTS": "Daftar Item"
+    }
+}

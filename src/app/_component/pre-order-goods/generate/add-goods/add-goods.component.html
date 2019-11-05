@@ -1,0 +1,21 @@
+<div class="container">
+    <h3 mat-dialog-title>Add new goods</h3>
+    <form class="mat-dialog-content" #formControl="ngForm">
+        <div class="good-autocomplete">
+            <mat-form-field class="">
+                <input #input matInput placeholder="Goods" aria-label="Goods" [matAutocomplete]="auto" [formControl]="goodsCtrl" required>
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let goods of filteredGoods | async" [value]="goods.no_catalog" #opt>
+                        <span>{{ goods.description }}</span>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+        <br>
+        <div mat-dialog-actions>
+            <button mat-button [mat-dialog-close]="input.value" (click)="confirmAdd()">Save</button>
+            <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+        </div>
+    </form>
+
+</div>

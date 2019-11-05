@@ -1,0 +1,72 @@
+<div class="container-scroller">
+    <bs-header></bs-header>
+    <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <bs-sidebar></bs-sidebar>
+        </nav>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+                </mat-form-field>
+
+                <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                    <ng-container matColumnDef="no_catalog">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> No Catalog </th>
+                        <td mat-cell *matCellDef="let element"> {{element.no_catalog}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="uom">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Pack Size </th>
+                        <td mat-cell *matCellDef="let element"> {{element.uom}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="instrument">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Instrument </th>
+                        <td mat-cell *matCellDef="let element"> {{element.instrument}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="storages">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Storage </th>
+                        <td mat-cell *matCellDef="let element"> {{element.storages}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="min_stock">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Min stock </th>
+                        <td mat-cell *matCellDef="let element"> {{element.min_stock}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="max_stock">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Max stock </th>
+                        <td mat-cell *matCellDef="let element"> {{element.max_stock}} </td>
+                    </ng-container>
+
+                    <!-- actions -->
+                    <ng-container matColumnDef="actions">
+                        <th mat-header-cell *matHeaderCellDef></th>
+
+                        <td mat-cell *matCellDef="let row; let i=index;">
+                            <button mat-icon-button color="accent" (click)="startEdit(row.no_catalog, row.description, row.uom, row.instrument,row.storages,row.min_stock,row.max_stock)">
+                                <mat-icon aria-label="Edit">edit</mat-icon>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[10, 25, 100]" class="mat-elevation-z8"></mat-paginator>
+                <div style="display: flex; justify-content: center; align-items: center">
+                    <mat-progress-spinner color="primary" mode="indeterminate" *ngIf="isLoadingResults">
+                    </mat-progress-spinner>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

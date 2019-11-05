@@ -1,0 +1,80 @@
+<div class="container" style="display: flex;justify-content: center;align-items: center;height: 100vh;">
+    <div class="card" style="width: 50%;" *ngIf="isCardLogin">
+        <div class="card-body">
+            <h5 class="card-title">Siloam Inventory Solutions [SIS]</h5>
+            <div class="card-text">
+                <form (ngSubmit)="loginCard()" #form="ngForm">
+                    <div class="form-group">
+                        <mat-form-field class="login-form">
+                            <input matInput id="id_card" name="id_card" placeholder="{{ 'LOGIN.IDCARD_PLACEHOLDER' | translate }}" [(ngModel)]="model.id_card" required>
+                        </mat-form-field>
+                        <mat-error *ngIf="invalidLoginCard">
+                            {{ 'LOGIN.IDCARD_INVALID' | translate }}
+                        </mat-error>
+                        <mat-error *ngIf="isApiError">
+                            {{ 'LOGIN.API_ERROR' | translate }}
+                        </mat-error>
+                    </div>
+
+                    <div class="form-group">
+                        <button mat-flat-button color="primary" [disabled]="submitted || !form.valid">{{ 'LOGIN.SIGNIN' | translate }}</button>
+                    </div>
+
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>{{ 'LOGIN.LANGUAGE' | translate }}</mat-label>
+                            <select matNativeControl #langSelect (change)="changeLang(langSelect.value)" id="lang" name="lang" [(ngModel)]="model.lang" required>
+                                  <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                                </select>
+                        </mat-form-field>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card-footer">
+            {{ 'LOGIN.IDCARD_FOOTER_TITTLE' | translate }} <button mat-button (click)="toLogin()">{{ 'LOGIN.IDCARD_FOOTER_BTN' | translate }}</button>
+        </div>
+    </div>
+
+    <div class="card" style="width: 50%;" *ngIf="!isCardLogin">
+        <div class="card-body">
+            <h5 class="card-title">Siloam Inventory Solutions [SIS]</h5>
+            <div class="card-text">
+                <form (ngSubmit)="login()" #form="ngForm">
+                    <div class="form-group">
+                        <mat-form-field class="login-form">
+                            <input matInput id="username" name="username" placeholder="{{ 'LOGIN.USERNAME' | translate }}" [(ngModel)]="model.username" required>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field class="login-form">
+                            <input matInput id="password" name="password" type="password" placeholder="{{ 'LOGIN.PASSWORD' | translate }}" [(ngModel)]="model.password" required>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="invalidLogin" class="alert alert-danger" role="alert">
+                        Invalid username and/or password.
+                    </div>
+                    <div *ngIf="isApiError" class="alert alert-danger" role="alert">
+                        {{ 'LOGIN.API_ERROR' | translate }}
+                    </div>
+                    <div class="form-group">
+                        <mat-form-field>
+                            <mat-label>{{ 'LOGIN.LANGUAGE' | translate }}</mat-label>
+                            <select matNativeControl #langSelect (change)="changeLang(langSelect.value)" id="lang" name="lang" [(ngModel)]="model.lang" required>
+                                      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                                    </select>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="form-group">
+                        <button mat-flat-button color="primary" [disabled]="submitted || !form.valid">{{ 'LOGIN.SIGNIN' | translate }}</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button mat-button (click)="toCard()">{{ 'LOGIN.BACK' | translate }}</button>
+        </div>
+    </div>
+</div>
