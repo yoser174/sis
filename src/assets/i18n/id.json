@@ -38,5 +38,45 @@
         "ADDPREORDERGOODS": "Tambah Pra Order Barang",
         "CPRRDATAUSAGE": "Penggunaan Data CPRR",
         "ITEMLISTS": "Daftar Item"
+    },
+    "GOODSIN": {
+        "SCANNERFORGOODSIN": "Pemindai barang masuk",
+        "QRCODEINVALID": "Kode QR tidak valid atau barang tidak dikenal.",
+        "QRCODE": "Kode QR :",
+        "QRCODEPLACEHOLDER": "Silakan memindai reagen kode QR",
+        "RESET": "Atur ulang",
+        "DESCRIPTION": "Deskripsi",
+        "NOCATALOG": "No. Katalog",
+        "EXPIRYDATE": "Tanggal kadaluarsa",
+        "BATCH": "Batch",
+        "BALANCESTOCKED": "Saldo Stok",
+        "EDTHISMONTH": "(ED bulan ini)",
+        "BALANCESTOCK": "Saldo Stok",
+        "PACKSIZE": "Ukuran Paket / UoM",
+        "SUBMIT": "Kirimkan"
+    },
+    "GOODSOUT": {
+        "SCANNERFORGOODSOUT": "Pemindai barang keluar",
+        "QRCODEINVALID": "Kode QR tidak valid atau barang tidak dikenal.",
+        "QRCODE": "Kode QR :",
+        "QRCODEPLACEHOLDER": "Silakan memindai reagen kode QR",
+        "RESET": "Atur ulang",
+        "DESCRIPTION": "Deskripsi",
+        "NOCATALOG": "No. Katalog",
+        "EXPIRYDATE": "Tanggal kadaluarsa",
+        "BATCH": "Batch",
+        "BALANCESTOCKED": "Saldo Stok",
+        "EDTHISMONTH": "(ED bulan ini)",
+        "BALANCESTOCK": "Saldo Stok",
+        "PACKSIZE": "Ukuran Paket / UoM",
+        "SUBMIT": "Kirimkan"
+    },
+    "TABLE": {
+        "FILTER": "Filter"
+    },
+    "DASHBOARD": {
+        "GOODSEXPIRYPOPULATIONS": "Populasi Kadaluarsa Barang",
+        "QUANTITY": "Kuantitas",
+        "EXPIRYGROUP": "Grup kadaluarsa"
     }
 }

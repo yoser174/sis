@@ -37,5 +37,46 @@
         "ADDPREORDERGOODS": "Add Pre Order Goods",
         "CPRRDATAUSAGE": "CPRR Data Usage",
         "ITEMLISTS": "Item Lists"
+    },
+    "GOODSIN": {
+        "SCANNERFORGOODSIN": "Scanner for goods in",
+        "QRCODEINVALID": "QR Code invalid or goods unknown.",
+        "QRCODE": "QR Code :",
+        "QRCODEPLACEHOLDER": "Please scan QR code reagent",
+        "RESET": "Reset",
+        "DESCRIPTION": "Description",
+        "NOCATALOG": "No Catalog",
+        "EXPIRYDATE": "Expiry Date",
+        "BATCH": "Batch",
+        "BALANCESTOCKED": "Balance Stock",
+        "EDTHISMONTH": "(ED this month)",
+        "BALANCESTOCK": "Balance Stock",
+        "PACKSIZE": "Pack Size / UoM",
+        "SUBMIT": "Submit"
+    },
+    "GOODSOUT": {
+        "SCANNERFORGOODSOUT": "Scanner for goods out",
+        "QRCODEINVALID": "QR Code invalid or goods unknown.",
+        "QRCODE": "QR Code :",
+        "QRCODEPLACEHOLDER": "Please scan QR code reagent",
+        "RESET": "Reset",
+        "DESCRIPTION": "Description",
+        "NOCATALOG": "No Catalog",
+        "EXPIRYDATE": "Expiry Date",
+        "BATCH": "Batch",
+        "BALANCESTOCKED": "Balance Stock",
+        "EDTHISMONTH": "(ED this month)",
+        "BALANCESTOCK": "Balance Stock",
+        "PACKSIZE": "Pack Size / UoM",
+        "SUBMIT": "Submit"
+
+    },
+    "TABLE": {
+        "FILTER": "Filter"
+    },
+    "DASHBOARD": {
+        "GOODSEXPIRYPOPULATIONS": "Goods Expiry Populations",
+        "QUANTITY": "Quantity",
+        "EXPIRYGROUP": "Expiry group"
     }
 }

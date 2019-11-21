@@ -50,6 +50,11 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { ExpiryStatusComponent } from './_component/dashboard/expiry-status/expiry-status.component';
+import { NotificationsComponent } from './_component/bs-header/notifications/notifications.component';
+
 export function jwtTokenGetter() {
   return localStorage.getItem('access_token');
 }
@@ -89,7 +94,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     AddPreOrderGoodsComponent,
     ItemListsComponent,
     AddGoodsComponent,
-    ApogGenerateComponent
+    ApogGenerateComponent,
+    ExpiryStatusComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -114,6 +121,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     CommonModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    NgxChartsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -125,9 +133,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     JwtModule.forRoot({
       config: {
         tokenGetter: jwtTokenGetter
-        // ,
-        // whitelistedDomains: ['localhost'],
-        // blacklistedRoutes: ['localhost/login']
       }
     })
   ],

@@ -1,28 +1,22 @@
 <div class="container-scroller">
     <bs-header></bs-header>
     <div class="container-fluid page-body-wrapper">
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-            <bs-sidebar></bs-sidebar>
-        </nav>
+        <bs-sidebar></bs-sidebar>
         <div class="main-panel">
             <div class="content-wrapper">
                 <div>
                     <div class="card">
                         <div class="card-body">
-                            <h2 class="card-title">Scanner for goods in</h2>
+                            <h2 class="card-title">{{ 'GOODSIN.SCANNERFORGOODSIN' | translate }}</h2>
                             <div class="form-group" *ngIf="!model.isValid">
-                                <input type="text" class="form-control" id="qrcode" #qrcode name="qrcode"
-                                    (keyup.enter)="qrEnter(qrcode.value)" placeholder="Please scan QR code reagent"
-                                    id="qr_code" autofocus name="qr_code" required
-                                    data-validation-required-message="Please scan QR code reagent">
+                                <input type="text" class="form-control" id="qrcode" #qrcode name="qrcode" (keyup.enter)="qrEnter(qrcode.value)" placeholder="{{ 'GOODSIN.QRCODEPLACEHOLDER' | translate }}" id="qr_code" autofocus name="qr_code" required data-validation-required-message="Please scan QR code reagent">
                                 <div *ngIf="!model.isValid  && isSubmited" class="alert alert-warning">
-                                    QR Code invalid or goods unknown.
+                                    {{ 'GOODSIN.QRCODEINVALID' | translate }}
                                 </div>
                             </div>
                             <div *ngIf="model.isValid">
-                                <p><b>QR Code :</b> {{ model.qr_code }}</p>
-                                <button type="submit" class="btn btn-primary mb-2"
-                                    (click)="resetQrCode()">Reset</button>
+                                <p><b>{{ 'GOODSIN.QRCODE' | translate }}</b> {{ model.qr_code }}</p>
+                                <button type="submit" class="btn btn-primary mb-2" (click)="resetQrCode()">{{ 'GOODSIN.RESET' | translate }}</button>
                             </div>
                         </div>
                     </div>
@@ -31,40 +25,34 @@
                 <div class="card" *ngIf="model.isValid  && isSubmited">
                     <div class="card-body">
                         <div class="form-group">
-                            <strong>Description :</strong>
-                            <textarea style="font-size: 35px;" class="form-control" placeholder="description"
-                                name="description" id="description" readonly="">{{ product.description }}</textarea>
+                            <strong>{{ 'GOODSIN.DESCRIPTION' | translate }} :</strong>
+                            <textarea style="font-size: 35px;" class="form-control" placeholder="description" name="description" id="description" readonly="">{{ product.description }}</textarea>
                         </div>
                         <div class="form-group">
-                            <strong>No Catalog :</strong>
-                            <input type="text" class="form-control" placeholder="No Catalog *" name="no_catalog"
-                                id="no_catalog" value="{{ product.no_catalog }}" readonly="">
+                            <strong>{{ 'GOODSIN.NOCATALOG' | translate }} :</strong>
+                            <input type="text" class="form-control" placeholder="No Catalog *" name="no_catalog" id="no_catalog" value="{{ product.no_catalog }}" readonly="">
                         </div>
                         <div class="form-group">
-                            <strong>Expiry Date :</strong>
-                            <input type="date" class="form-control" placeholder="Expiry Date *" name="expired_date"
-                                id="expired_date" required="" value="{{ product.expired }}" readonly="">
+                            <strong>{{ 'GOODSIN.EXPIRYDATE' | translate }} :</strong>
+                            <input type="date" class="form-control" placeholder="Expiry Date *" name="expired_date" id="expired_date" required="" value="{{ product.expired }}" readonly="">
                         </div>
                         <div class="form-group">
-                            <strong>Batch :</strong>
-                            <input class="form-control" placeholder="batch *" name="batch" id="batch"
-                                value="{{  product.lot }}" readonly="">
+                            <strong>{{ 'GOODSIN.BATCH' | translate }} :</strong>
+                            <input class="form-control" placeholder="batch *" name="batch" id="batch" value="{{  product.lot }}" readonly="">
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="form-group">
-                            <strong>Balance Stock: </strong> <br>(ED this month)
-                            <input type="text" readonly="" class="form-control" placeholder="Balance Stock"
-                                name="balance_stock" id="balance_stock" value="{{  product.ed_this_month }}">
+                            <strong>{{ 'GOODSIN.BALANCESTOCKED' | translate }}: </strong> <br>{{ 'GOODSIN.EDTHISMONTH' | translate }}
+                            <input type="text" readonly="" class="form-control" placeholder="Balance Stock" name="balance_stock" id="balance_stock" value="{{  product.ed_this_month }}">
                             <p></p>
                         </div>
                         <div class="form-group">
-                            <strong>Balance Stock: <br> </strong><br>
-                            <input type="text" readonly="" class="form-control" placeholder="Balance Stock"
-                                name="balance_stock_1" id="balance_stock_1" value="{{  product.ed_not_this_month }}">
+                            <strong>{{ 'GOODSIN.BALANCESTOCK' | translate }}: <br> </strong><br>
+                            <input type="text" readonly="" class="form-control" placeholder="Balance Stock" name="balance_stock_1" id="balance_stock_1" value="{{  product.ed_not_this_month }}">
                             <p></p>
                         </div>
                         <div class="form-group">
-                            <strong>Pack Size / UoM : </strong> {{  product.uom }} vial/botol per Kit
+                            <strong>{{ 'GOODSIN.PACKSIZE' | translate }}: </strong> {{ product.uom }} vial/botol per Kit
                         </div>
                     </div>
                 </div>
@@ -79,11 +67,10 @@
                                         value="{{ storage.id_storage }}" [attr.selected]="storage.storages==product.storages ? true : null" >{{ storage.storages }}</option>
                                     </select>
                                 </div>
-                                <div  class="form-group mx-sm-3 mb-2">
+                                <div class="form-group mx-sm-3 mb-2">
                                     <input #tmp_quantity type="text" formControlName="quantity" class="form-control" value="1">
                                 </div>
-                                <button class="btn btn-primary mb-2" type="submit"
-                                    [disabled]="!tmp_storage_id.value || !tmp_quantity.value ">Submit</button>
+                                <button class="btn btn-primary mb-2" type="submit" [disabled]="!tmp_storage_id.value || !tmp_quantity.value ">{{ 'GOODSIN.SUBMIT' | translate }}</button>
                             </form>
                         </div>
 

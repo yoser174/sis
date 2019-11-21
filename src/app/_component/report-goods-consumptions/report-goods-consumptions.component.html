@@ -1,9 +1,7 @@
 <div class="container-scroller">
     <bs-header></bs-header>
     <div class="container-fluid page-body-wrapper">
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-            <bs-sidebar></bs-sidebar>
-        </nav>
+        <bs-sidebar></bs-sidebar>
         <div class="main-panel">
             <div class="content-wrapper">
                 <div>
@@ -46,7 +44,7 @@
                         </ng-container>
 
                         <ng-container matColumnDef="date">
-                            <th mat-header-cell *matHeaderCellDef>Date</th>
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
                             <td mat-cell *matCellDef="let element"> {{element.date}} </td>
                         </ng-container>
 

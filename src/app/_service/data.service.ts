@@ -66,15 +66,6 @@ export class DataService {
         catchError(this.handleError)
       );
   }
-
-  // uploadFile(formData){
-  // this.http.post('url/to/your/api', formData)
-  //       .subscribe(res => {
-  //         console.log(res);
-  //         this.uploadedFilePath = res.data.filePath;
-  //         alert('SUCCESS !!');
-  //       }) 
-  //   }
     
   setUser(resp: LoginResponse){
     localStorage.setItem('name',resp.name);
