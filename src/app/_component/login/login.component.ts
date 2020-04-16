@@ -39,8 +39,6 @@ export class LoginComponent implements OnInit {
     this.model.action = 'login-card';
     this.submitted = true;
 
-    console.log(this.model);
-
     this.dataService.getData(this.model).subscribe(
 
       response => {

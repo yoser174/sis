@@ -19,7 +19,7 @@ export class ReportGoodsReceivedComponent implements OnInit {
   isLoadingResults;
   dataFromServer;
   dataSource;
-  displayedColumns: string[] = ['no_catalog','description','quantity_in','storages','username','date'];
+  displayedColumns: string[] = ['no_catalog','description','quantity_in','storages','batch','expired_date','username','date'];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild('TABLE', { static: false }) table: ElementRef;

@@ -17,6 +17,9 @@ export class BsHeaderComponent implements OnInit {
   isLoadingResults;
   dataFromServer;
   notifications;
+  user_hospital;
+  selected_hospital;
+  select_disabled:boolean=false;
 
   constructor(
     private dataService: DataService,
@@ -28,6 +31,51 @@ export class BsHeaderComponent implements OnInit {
   showError() {
     this.toastr.error('Something bad happened; Please try again later.', 'Major Error');
   }
+
+  updateDefaultHospital(){
+
+    // console.log('Ganti ke hospital ID :'+this.selected_hospital)
+    this.model.action = 'set-user-hospital';
+    this.model.access_token = localStorage.getItem('access_token');
+    this.model.user_hospital = this.selected_hospital;
+    this.dataService.getData(this.model).subscribe(response => {
+      if (response.status === 'success') {
+        this.isLoadingResults = true;
+        this.dataFromServer = response['data'];
+        this.notifications = this.dataFromServer['notification'];
+
+      }
+    }, error => {
+      this.showError();
+      this.isLoadingResults = false;
+    });
+  }
+
+  loadUserHospital(){
+    this.isLoadingResults = true;
+    this.model.action = 'list-user-hospital';
+    this.model.access_token = localStorage.getItem('access_token');
+    this.dataService.getData(this.model).subscribe(response => {
+      if (response.status === 'success') {
+        this.isLoadingResults = true;
+        this.dataFromServer = response['data'];
+        this.user_hospital = this.dataFromServer['user_hospital'];
+        let h_count = 0;
+
+        for (let hospital of this.user_hospital){
+          h_count ++;
+          if (hospital.unit_default == '1'){
+            this.selected_hospital = hospital.id_hospital 
+          }
+        }
+        if (h_count <= 1) this.select_disabled = true;
+      }
+    }, error => {
+      this.showError();
+      this.isLoadingResults = false;
+    });
+  }
+
 
   loadNotif(){
     this.isLoadingResults = true;
@@ -54,6 +102,7 @@ export class BsHeaderComponent implements OnInit {
     this.model.token_data = this.dataService.getTokenData();
     this.isProduction = environment.production;
     this.translate.use(localStorage.getItem('lang'));
+    this.loadUserHospital();
   }
 
   logout() {

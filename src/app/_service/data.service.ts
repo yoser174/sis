@@ -58,7 +58,6 @@ export class DataService {
   }
 
   getData(data): Observable<LoginResponse>{
-    console.log(this.httpOptions);
     return this.http
       .post<LoginResponse>(this.basePath + 'api.php', data, this.httpOptions)
       .pipe(

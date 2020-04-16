@@ -18,6 +18,10 @@ export class GoodsOutComponent  {
   dataFromServer: any = {};
   product: any = {};
   GoodsOutForm;
+  earlier_ed_count = 0;
+  earlier_ed : any = {};
+  product_found_count = 1;
+  product_found : any = {};
 
   constructor(private toastr: ToastrService,
     private formBuilder: FormBuilder,
@@ -73,12 +77,15 @@ export class GoodsOutComponent  {
     this.model.access_token = localStorage.getItem('access_token');
 
     this.dataService.getData(this.model).subscribe(response => {
+      this.earlier_ed_count = 0;
+      this.product_found_count = 0;
       if (response.status === 'success') {
         this.isSubmited = true;
         this.dataFromServer = response['data'];
         this.model.isValid = this.dataFromServer['isValid'];
 
         // get data product
+        this.product.hospital =  this.dataFromServer['product']['hospital']; 
         this.product.no_catalog = this.dataFromServer['product']['no_catalog'];
         this.product.description = this.dataFromServer['product']['description'];
         this.product.storages = this.dataFromServer['product']['storages'];
@@ -90,6 +97,17 @@ export class GoodsOutComponent  {
         this.product.storage_list = this.dataFromServer['product']['storage_list'];
         this.product.instrument_list = this.dataFromServer['product']['instrument_list'];
         this.product.instrument = this.dataFromServer['product']['instrument'];
+
+        // earlier ed
+        this.earlier_ed = this.dataFromServer['product']['earlier_ed'];
+
+        // found
+        this.product_found = this.dataFromServer['product']['product_found'];
+
+        
+        for (let e_ed of this.earlier_ed  ){ this.earlier_ed_count += 1; }
+        for (let pf of this.product_found  ){ this.product_found_count += 1; }
+        console.log(this.product_found_count);
 
         // get id_storage
         this.id_storage = "";
@@ -126,5 +144,7 @@ export class GoodsOutComponent  {
     this.model.qr_code = null;
     this.model.isValid = false;
     this.isSubmited = false;
+    this.earlier_ed_count = 0;
+    this.product_found_count = 1;
   }
 }

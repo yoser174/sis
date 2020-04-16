@@ -19,7 +19,7 @@ export class ReportGoodsConsumptionsComponent implements OnInit {
   isLoadingResults;
   dataFromServer;
   dataSource;
-  displayedColumns: string[] = ['no_catalog','description','quantity_out','storages','instrument','username','date'];
+  displayedColumns: string[] = ['no_catalog','description','quantity_out','expired_date','batch','storages','instrument','username','date'];
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;

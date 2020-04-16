@@ -18,6 +18,18 @@
                                 <p><b>QR Code :</b> {{ model.qr_code }}</p>
                                 <button type="submit" class="btn btn-primary mb-2" (click)="resetQrCode()"> {{ 'GOODSOUT.RESET' | translate }}</button>
                             </div>
+                            <div *ngIf="product_found_count == 0" class="alert alert-danger" role="alert"><b>{{ product.hospital }}</b> tidak mempunyai reagensia <b>{{ product.description }}</b> dengan batch <b>31916301</b> dan masa kadaluarsa <b>{{ product.expired }}</b></div>
+
+
+                            <div *ngIf="earlier_ed_count > 0" class="alert alert-danger" role="alert">
+                                <p><b>{{ product.hospital }}</b> mempunyai reagensia <b>{{ product.description }}</b> dengan masa kadaluarsa lebih pendek.<br>Silahkan menggunakan reagen dengan masa kadaluarsa lebih pendek terlebih dulu<br><b>Berikut datanya:</b>
+                                </p>
+                                <ul *ngFor="let e_ed of earlier_ed">
+                                    <li>Kuantiti : <b>{{ e_ed.available }}</b></li>
+                                    <li>Masa kadaluarsa : <b>{{ e_ed.expired_date }}</b></li>
+                                    <li>Penyimpanan : <b>{{ e_ed.storages }}</b> </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -76,7 +88,7 @@
                                 <div class="form-group mx-sm-3 mb-2">
                                     <input #tmp_quantity type="text" formControlName="quantity" class="form-control" value="1">
                                 </div>
-                                <button class="btn btn-primary mb-2" type="submit" [disabled]="!tmp_storage_id.value || !tmp_instrument_id.value || !tmp_quantity.value "> {{ 'GOODSOUT.SUBMIT' | translate }}</button>
+                                <button class="btn btn-primary mb-2" type="submit" [disabled]="!tmp_storage_id.value || !tmp_instrument_id.value || !tmp_quantity.value || earlier_ed_count > 0 || product_found_count == 0  "> {{ 'GOODSOUT.SUBMIT' | translate }}</button>
                             </form>
 
                         </div>

@@ -2,7 +2,7 @@
     "LOGIN": {
         "API_ERROR": "Connection error with the server, please check your internet connection then reload this page.",
         "IDCARD": "Kartu ID",
-        "IDCARD_PLACEHOLDER": "Silakan pindai Kartu ID Siloam Anda",
+        "IDCARD_PLACEHOLDER": "Silakan pindai Kartu ID Anda",
         "SIGNIN": "Masuk",
         "LANGUAGE": "Bahasa",
         "USERNAME": "Nama Pengguna",

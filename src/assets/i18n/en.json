@@ -2,7 +2,7 @@
     "LOGIN": {
         "API_ERROR": "Connection error with the server, please check your internet connection then reload this page.",
         "IDCARD": "ID Card",
-        "IDCARD_PLACEHOLDER": "Please scan your Siloam ID Card",
+        "IDCARD_PLACEHOLDER": "Please scan your ID Card",
         "SIGNIN": "Sign in",
         "USERNAME": "User Name",
         "LANGUAGE": "Language",

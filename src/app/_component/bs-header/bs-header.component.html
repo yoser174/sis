@@ -10,8 +10,17 @@
         </div>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <ul class="navbar-nav mr-lg-4 w-100">
-            <div style="color:red" *ngIf="!isProduction">{{ 'HEADER.TEST_ENVIRONMENT' | translate }}</div>
+        <ul class="navbar-nav mr-lg-6 w-400">
+            <!-- <div style="color:red" *ngIf="!isProduction">{{ 'HEADER.TEST_ENVIRONMENT' | translate }}</div> -->
+            <div>
+                <mat-form-field>
+                    <mat-select [(value)]="selected_hospital" [disabled]="select_disabled" (selectionChange)="updateDefaultHospital()">
+                        <mat-option *ngFor="let hospital of user_hospital" [value]="hospital.id_hospital">
+                            {{hospital.unit_siloam}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </ul>
         <ul class="navbar-nav navbar-nav-right">
             <!-- <li class="nav-item dropdown mr-1">
